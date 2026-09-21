@@ -78,7 +78,7 @@ ViSTMAE/
 
 ## 🚀 Reproducibility & Benchmark Scripts
 
-Run end-to-end training and evaluation across 5 random seeds (`42, 43, 44, 45, 46`). The evaluation pipeline reports Mean ± Std for **Standard F1**, **VUS-ROC**, and **VUS-PR**:
+Run end-to-end training and evaluation across 5 random seeds (`42, 43, 44, 45, 46`). The evaluation pipeline outputs Mean ± Std for **Standard F1**, **VUS-ROC**, and **VUS-PR**:
 
 ```bash
 # 1. Server Machine Dataset (SMD)
@@ -96,29 +96,6 @@ python run.py --dataset MSL --device cuda:0 --seeds 42 43 44 45 46
 # 5. Pooled Server Metrics (PSM)
 python run.py --dataset PSM --device cuda:0 --seeds 42 43 44 45 46
 ```
-
----
-
-## 📊 Benchmark Performance
-
-Performance comparison on representative physical benchmarks evaluated over 5 distinct random seeds:
-
-| Dataset | Standard F1 | VUS-ROC (%) | VUS-PR (%) |
-| :--- | :---: | :---: | :---: |
-| **SMD** | **0.2923 ± 0.0015** | **85.58 ± 0.12** | **25.07 ± 0.08** |
-| **SMAP** | **0.2565 ± 0.0018** | **59.01 ± 0.21** | **16.73 ± 0.11** |
-| **SWaT** | **0.8654 ± 0.0022** | **88.24 ± 0.15** | **84.12 ± 0.19** |
-| **MSL** | **0.2612 ± 0.0017** | **78.43 ± 0.20** | **28.35 ± 0.14** |
-| **PSM** | **0.7845 ± 0.0019** | **86.10 ± 0.16** | **76.90 ± 0.15** |
-
-### Ablation Study (SMD & SMAP)
-
-| Variant | SMD (F1 / V-ROC / V-PR) | SMAP (F1 / V-ROC / V-PR) |
-| :--- | :---: | :---: |
-| w/ Point Masking | 0.2464 / 0.7593 / 0.1899 | 0.2268 / 0.4128 / 0.1221 |
-| w/o Vision Prior | 0.2480 / 0.8202 / 0.2103 | 0.2323 / 0.4979 / 0.1315 |
-| w/ Fixed Weights | 0.2812 / 0.8540 / 0.2472 | 0.2450 / 0.5602 / 0.1669 |
-| **Full Model (Ours)** | **0.2923 / 0.8558 / 0.2507** | **0.2565 / 0.5901 / 0.1673** |
 
 ---
 
