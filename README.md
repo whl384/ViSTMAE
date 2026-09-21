@@ -97,8 +97,4 @@ python run.py --dataset MSL --device cuda:0 --seeds 42 43 44 45 46
 python run.py --dataset PSM --device cuda:0 --seeds 42 43 44 45 46
 ```
 
----
 
-## 🔒 License & Double-Blind Policy
-
-This repository is organized strictly for double-blind peer review. Author credentials, institution details, and licenses are temporarily withheld.
